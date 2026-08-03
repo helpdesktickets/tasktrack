@@ -1,5 +1,117 @@
-index.html
-style.css
-app.js
-api.js
-translate.js
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskTrack</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="theme-color" content="#2563eb">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="header">
+        <h1>🏢 TaskTrack</h1>
+
+        <select id="language">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+        </select>
+    </header>
+
+    <!-- CLOCK IN SCREEN -->
+    <section id="clockInScreen">
+
+        <h2>Daily Task Tracker</h2>
+
+        <label>Employee</label>
+
+        <select id="employeeSelect">
+            <option>Loading Employees...</option>
+        </select>
+
+        <div class="card">
+            <h3>GPS Status</h3>
+            <p id="gpsStatus">
+                Waiting...
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Clock In</h3>
+
+            <button id="clockInBtn">
+                CLOCK IN
+            </button>
+        </div>
+
+    </section>
+
+    <!-- TASK SCREEN -->
+    <section id="taskScreen" style="display:none;">
+
+        <div class="card">
+
+            <h2 id="welcomeText">
+                Welcome
+            </h2>
+
+            <p>
+                Clocked In:
+                <span id="clockInTime">--:--</span>
+            </p>
+
+            <p>
+                GPS:
+                <span id="gpsResult">Verified</span>
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Today's Progress</h3>
+
+            <progress
+                id="progressBar"
+                value="0"
+                max="100">
+            </progress>
+
+            <p>
+                <span id="progressText">0%</span>
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Today's Tasks</h3>
+
+            <div id="taskList">
+
+                <!-- Loaded automatically -->
+
+            </div>
+
+        </div>
+
+        <button id="submitBtn">
+            Submit Tasks
+        </button>
+
+    </section>
+
+</div>
+
+<script src="translate.js"></script>
+<script src="api.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
